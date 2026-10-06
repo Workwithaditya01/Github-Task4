@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevTrack — DevOps Project Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+
+            <div>
+                <h1>DevTrack</h1>
+                <span>DevOps Tracker</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-title">WORKSPACE</p>
+
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="#projects-page" class="nav-link" data-section="projects-page">
+                <span>◈</span>
+                Projects
+            </a>
+
+            <a href="#tasks" class="nav-link" data-section="tasks">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="#git-workflow" class="nav-link" data-section="git-workflow">
+                <span>⑂</span>
+                Git Workflow
+            </a>
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="#activity" class="nav-link" data-section="activity">
+                <span>◷</span>
+                Activity
+            </a>
+
+            <a href="#settings" class="nav-link" data-section="settings">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="version">
+                <span>VERSION</span>
+                <strong>v0.2.0</strong>
+            </div>
+
+            <div class="user-card">
+                <div class="avatar">AD</div>
+
+                <div>
+                    <strong>Developer</strong>
+                    <span>DevOps Engineer</span>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-brand">
+                <strong>⚡ DevTrack</strong>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    All systems operational
+                </div>
+
+                <button class="notification-btn">
+                    🔔
+                    <span class="notification-count">3</span>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="content-section active-section">
+
+            <div class="welcome-section">
+
+                <div class="welcome-text">
+
+                    <span class="eyebrow">DEVOPS PROJECT MANAGEMENT</span>
+
+                    <h2>
+                        Build.
+                        <span>Deploy.</span>
+                        Improve.
+                    </h2>
+
+                    <p>
+                        Manage your DevOps projects, track development progress,
+                        and visualize your Git workflow from one place.
+                    </p>
+
+                    <div class="welcome-buttons">
+
+                        <button class="primary-btn" onclick="showSection('projects-page')">
+                            View Projects →
+                        </button>
+
+                        <button class="secondary-btn" onclick="openModal()">
+                            + New Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="terminal">
+
+                    <div class="terminal-top">
+
+                        <div class="terminal-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>devtrack ~ bash</span>
+
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <p>
+                            <span class="terminal-green">$</span>
+                            git status
+                        </p>
+
+                        <p class="terminal-success">
+                            ✓ On branch dev
+                        </p>
+
+                        <p>
+                            <span class="terminal-green">$</span>
+                            git log --oneline -4
+                        </p>
+
+                        <p class="terminal-muted">
+                            8f42a1b feature/projects-page
+                        </p>
+
+                        <p class="terminal-muted">
+                            72bc91d initial dashboard
+                        </p>
+
+                        <p>
+                            <span class="terminal-green">$</span>
+                            <span class="cursor">_</span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">◈</div>
+
+                    <div>
+                        <span>Total Projects</span>
+                        <strong>04</strong>
+                    </div>
+
+                    <small>+1 this week</small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">✓</div>
+
+                    <div>
+                        <span>Active Tasks</span>
+                        <strong>08</strong>
+                    </div>
+
+                    <small>3 due today</small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">↗</div>
+
+                    <div>
+                        <span>Deployments</span>
+                        <strong>12</strong>
+                    </div>
+
+                    <small>+4 this month</small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">⑂</div>
+
+                    <div>
+                        <span>Git Commits</span>
+                        <strong>37</strong>
+                    </div>
+
+                    <small>+9 this week</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD GRID -->
+
+            <div class="dashboard-grid">
+
+                <!-- ACTIVE PROJECTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-label">OVERVIEW</span>
+                            <h3>Active Projects</h3>
+                        </div>
+
+                        <button class="text-btn" onclick="showSection('projects-page')">
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-list">
+
+                        <div class="project-row">
+
+                            <div class="project-logo docker">
+                                🐳
+                            </div>
+
+                            <div class="project-info">
+                                <strong>Docker Deployment</strong>
+                                <span>Containerized application</span>
+                            </div>
+
+                            <div class="mini-progress">
+                                <div>
+                                    <span>85%</span>
+                                </div>
+
+                                <div class="mini-bar">
+                                    <span style="width:85%"></span>
+                                </div>
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-logo jenkins">
+                                ⚙
+                            </div>
+
+                            <div class="project-info">
+                                <strong>CI/CD Pipeline</strong>
+                                <span>Jenkins automation</span>
+                            </div>
+
+                            <div class="mini-progress">
+
+                                <div>
+                                    <span>70%</span>
+                                </div>
+
+                                <div class="mini-bar">
+                                    <span style="width:70%"></span>
+                                </div>
+
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-logo cloud">
+                                ☁
+                            </div>
+
+                            <div class="project-info">
+                                <strong>Cloud Infrastructure</strong>
+                                <span>Infrastructure automation</span>
+                            </div>
+
+                            <div class="mini-progress">
+
+                                <div>
+                                    <span>40%</span>
+                                </div>
+
+                                <div class="mini-bar">
+                                    <span style="width:40%"></span>
+                                </div>
+
+                            </div>
+
+                            <span class="status planning">
+                                Planning
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-logo git">
+                                ⑂
+                            </div>
+
+                            <div class="project-info">
+                                <strong>Git Workflow</strong>
+                                <span>Version control project</span>
+                            </div>
+
+                            <div class="mini-progress">
+
+                                <div>
+                                    <span>100%</span>
+                                </div>
+
+                                <div class="mini-bar">
+                                    <span style="width:100%"></span>
+                                </div>
+
+                            </div>
+
+                            <span class="status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GIT ACTIVITY -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-label">RECENT</span>
+                            <h3>Git Activity</h3>
+                        </div>
+
+                        <button class="text-btn" onclick="showSection('git-workflow')">
+                            Git workflow →
+                        </button>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon commit">
+                                ●
+                            </div>
+
+                            <div>
+                                <strong>Initial project setup</strong>
+                                <span>main • 2 hours ago</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon branch">
+                                ⑂
+                            </div>
+
+                            <div>
+                                <strong>Created feature branch</strong>
+                                <span>feature/projects-page • 1 hour ago</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon merge">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>Pull request merged</strong>
+                                <span>dev • 45 minutes ago</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon release">
+                                ★
+                            </div>
+
+                            <div>
+                                <strong>Release v1.0.0</strong>
+                                <span>main • 20 minutes ago</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects-page" class="content-section">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">PROJECT MANAGEMENT</span>
+
+                    <h2>Projects</h2>
+
+                    <p>
+                        Track and manage your DevOps projects from development
+                        to deployment.
+                    </p>
+                </div>
+
+                <button class="primary-btn" onclick="openModal()">
+                    + New Project
+                </button>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-card-header">
+
+                        <div class="large-project-icon docker">
+                            🐳
+                        </div>
+
+                        <span class="status active">
+                            Active
+                        </span>
+
+                    </div>
+
+                    <h3>Docker Deployment</h3>
+
+                    <p>
+                        Containerized application deployment using Docker
+                        and Docker Compose.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-info">
+                            <span>Progress</span>
+                            <strong>85%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:85%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+                        <span>⑂ 12 commits</span>
+                        <span>DevOps</span>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-card-header">
+
+                        <div class="large-project-icon jenkins">
+                            ⚙
+                        </div>
+
+                        <span class="status active">
+                            Active
+                        </span>
+
+                    </div>
+
+                    <h3>CI/CD Pipeline</h3>
+
+                    <p>
+                        Automated build, testing and deployment pipeline
+                        using Jenkins.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-info">
+                            <span>Progress</span>
+                            <strong>70%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:70%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+                        <span>⑂ 18 commits</span>
+                        <span>Automation</span>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-card-header">
+
+                        <div class="large-project-icon cloud">
+                            ☁
+                        </div>
+
+                        <span class="status planning">
+                            Planning
+                        </span>
+
+                    </div>
+
+                    <h3>Cloud Infrastructure</h3>
+
+                    <p>
+                        Infrastructure automation and cloud resource
+                        management.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-info">
+                            <span>Progress</span>
+                            <strong>40%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:40%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+                        <span>⑂ 7 commits</span>
+                        <span>Cloud</span>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 4 -->
+
+                <article class="project-card">
+
+                    <div class="project-card-header">
+
+                        <div class="large-project-icon git">
+                            ⑂
+                        </div>
+
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <h3>Git Workflow</h3>
+
+                    <p>
+                        Version-controlled development workflow using Git
+                        and GitHub.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-info">
+                            <span>Progress</span>
+                            <strong>100%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:100%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+                        <span>⑂ 37 commits</span>
+                        <span>Git</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TASKS ================= -->
+
+        <section id="tasks" class="content-section">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">TASK MANAGEMENT</span>
+                    <h2>Tasks</h2>
+                    <p>Track development tasks and project progress.</p>
+                </div>
+
+            </div>
+
+
+            <div class="task-board">
+
+                <div class="task-column">
+
+                    <h3>To Do <span>3</span></h3>
+
+                    <div class="task-card">
+                        <strong>Create GitHub repository</strong>
+                        <small>Git Workflow</small>
+                    </div>
+
+                    <div class="task-card">
+                        <strong>Add project documentation</strong>
+                        <small>Documentation</small>
+                    </div>
+
+                    <div class="task-card">
+                        <strong>Create release tag</strong>
+                        <small>Git</small>
+                    </div>
+
+                </div>
+
+
+                <div class="task-column">
+
+                    <h3>In Progress <span>2</span></h3>
+
+                    <div class="task-card">
+                        <strong>Build Projects page</strong>
+                        <small>Frontend</small>
+                    </div>
+
+                    <div class="task-card">
+                        <strong>Implement Git workflow</strong>
+                        <small>DevOps</small>
+                    </div>
+
+                </div>
+
+
+                <div class="task-column">
+
+                    <h3>Completed <span>4</span></h3>
+
+                    <div class="task-card completed-task">
+                        <strong>Initialize Git repository</strong>
+                        <small>Git</small>
+                    </div>
+
+                    <div class="task-card completed-task">
+                        <strong>Build dashboard</strong>
+                        <small>Frontend</small>
+                    </div>
+
+                    <div class="task-card completed-task">
+                        <strong>Configure project structure</strong>
+                        <small>Setup</small>
+                    </div>
+
+                    <div class="task-card completed-task">
+                        <strong>Push initial commit</strong>
+                        <small>GitHub</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GIT WORKFLOW ================= -->
+
+        <section id="git-workflow" class="content-section">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">VERSION CONTROL</span>
+                    <h2>Git Workflow</h2>
+                    <p>
+                        Visual representation of the project's Git branching
+                        strategy.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="workflow-container">
+
+                <div class="workflow-main">
+
+                    <div class="workflow-node main-node">
+
+                        <span>MAIN</span>
+                        <strong>Production</strong>
+
+                    </div>
+
+                    <div class="workflow-line"></div>
+
+                    <div class="workflow-node dev-node">
+
+                        <span>DEV</span>
+                        <strong>Integration</strong>
+
+                    </div>
+
+                    <div class="workflow-line"></div>
+
+                    <div class="feature-row">
+
+                        <div class="workflow-node feature-node">
+                            <span>FEATURE</span>
+                            <strong>Projects</strong>
+                        </div>
+
+                        <div class="workflow-node feature-node">
+                            <span>FEATURE</span>
+                            <strong>Dashboard</strong>
+                        </div>
+
+                        <div class="workflow-node feature-node">
+                            <span>FEATURE</span>
+                            <strong>Git Workflow</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-info">
+
+                    <div>
+                        <strong>1. Main</strong>
+                        <p>
+                            Stable production-ready code.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>2. Dev</strong>
+                        <p>
+                            Integration branch for completed features.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>3. Feature branches</strong>
+                        <p>
+                            Individual branches used for development.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>4. Pull Requests</strong>
+                        <p>
+                            Features are reviewed and merged into dev.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIVITY ================= -->
+
+        <section id="activity" class="content-section">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">PROJECT HISTORY</span>
+                    <h2>Activity</h2>
+                    <p>Recent project and Git activity.</p>
+                </div>
+
+            </div>
+
+
+            <div class="activity-panel">
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <strong>Created feature/projects-page</strong>
+                        <p>Feature development started.</p>
+                    </div>
+                    <time>Today</time>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <strong>Created dev branch</strong>
+                        <p>Development integration branch created.</p>
+                    </div>
+                    <time>Today</time>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <strong>Initial project committed</strong>
+                        <p>DevTrack application added to Git.</p>
+                    </div>
+                    <time>Today</time>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SETTINGS ================= -->
+
+        <section id="settings" class="content-section">
+
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">CONFIGURATION</span>
+                    <h2>Settings</h2>
+                    <p>Application configuration.</p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-card">
+
+                <div class="setting-row">
+
+                    <div>
+                        <strong>Git Integration</strong>
+                        <p>Connected to GitHub repository.</p>
+                    </div>
+
+                    <span class="setting-status">
+                        Connected
+                    </span>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <strong>Notifications</strong>
+                        <p>Receive project activity notifications.</p>
+                    </div>
+
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <strong>Application Version</strong>
+                        <p>Current DevTrack release.</p>
+                    </div>
+
+                    <strong>v0.2.0</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= NEW PROJECT MODAL ================= -->
+
+<div class="modal-overlay" id="projectModal">
+
+    <div class="modal">
+
+        <button class="modal-close" onclick="closeModal()">
+            ×
+        </button>
+
+        <span class="eyebrow">NEW PROJECT</span>
+
+        <h2>Create Project</h2>
+
+        <p>
+            Add a new project to your DevOps workspace.
+        </p>
+
+
+        <form id="projectForm">
+
+            <label>
+                Project Name
+            </label>
+
+            <input
+                type="text"
+                id="projectName"
+                placeholder="e.g. Kubernetes Deployment"
+                required
+            >
+
+
+            <label>
+                Project Type
+            </label>
+
+            <select id="projectType">
+
+                <option>DevOps</option>
+                <option>CI/CD</option>
+                <option>Cloud</option>
+                <option>Git</option>
+                <option>Infrastructure</option>
+
+            </select>
+
+
+            <button type="submit" class="primary-btn modal-submit">
+                Create Project
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
